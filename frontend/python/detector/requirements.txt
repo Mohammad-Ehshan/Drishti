@@ -1,0 +1,21 @@
+# Environment & HTTP
+python-dotenv==1.0.1
+requests==2.32.2
+
+# Firebase Admin SDK
+firebase-admin==6.5.0
+
+# Google Generative AI (Gemini)
+google-generativeai==0.4.1
+
+# Flask Server
+Flask==3.0.2
+flask-cors==4.0.0
+
+# Image & Video Processing
+pillow==10.3.0
+opencv-python-headless==4.9.0.80
+numpy==1.26.4
+
+# Face Recognition
+deepface==0.0.83
