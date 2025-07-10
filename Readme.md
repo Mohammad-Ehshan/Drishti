@@ -1,284 +1,154 @@
-# 🔍 Project Drishti - AI Video Anomaly Detection System
+🛡️ Project Drishti – Agentic AI for Event Safety
+A real-time, multi-agent AI platform using Google Cloud, AR/VR, and LLMs to proactively manage crowd safety in large-scale events through visual analytics, forecasting, anomaly detection, and intelligent dispatch.
 
-A comprehensive real-time video processing and anomaly detection system using AI-powered computer vision for security monitoring.
+📽️ Overview
+Project Drishti is a cutting-edge event safety solution powered by multi-agent AI, designed to monitor and manage crowd movement, prevent disasters, and ensure rapid response. The system ingests live video, biometric, and social data, analyzes it using Google Cloud's Vertex AI ecosystem, and responds intelligently with dispatch, alerts, and even AR-guided evacuation routes.
 
-## ✅ **CHECKPOINT VERIFICATION**
+🧠 System Architecture
+Drishti’s modular architecture includes a set of autonomous agents communicating through Firestore, Pub/Sub, and BigQuery. These agents perform real-time analytics, forecasting, multimodal anomaly detection, and incident response.
 
-### 🔄 **Real-time Sync**
-- ✅ **Firestore Real-time Listener**: Uses `onSnapshot()` for live updates (no polling)
-- ✅ **Live Dashboard Updates**: Automatic UI refresh when new alerts are detected
-- ✅ **Real-time Map Markers**: Instant marker updates on anomaly detection
+Key Agents:
+CrowdMonitor Agent
 
-### 🧠 **Gemini Integration** 
-- ✅ **Gemini Vision API**: Uses `gemini-1.5-flash` (free tier) for image analysis
-- ✅ **JPEG Buffer Processing**: Converts OpenCV frames to PIL Images for Gemini
-- ✅ **Structured JSON Responses**: Proper prompt engineering for consistent outputs
-- ✅ **Confidence Scoring**: AI provides 0.0-1.0 confidence ratings
+ForecastAgent
 
-### 📷 **Stream Connectivity**
-- ✅ **IP Webcam Integration**: Connects to `http://<yourip>/video`
-- ✅ **OpenCV Video Capture**: Robust frame capture with error handling
-- ✅ **5-Second Intervals**: Processes 1 frame every 5 seconds as specified
-- ✅ **Connection Monitoring**: Auto-retry on connection failures
+Gemini Summarizer Agent
 
-### ☁️ **Firebase Setup**
-- ✅ **Firebase Admin SDK**: Server-side operations for Python backend
-- ✅ **Firebase Web SDK**: Client-side real-time listeners in Next.js
-- ✅ **Firestore Database**: Structured alert storage with timestamps
-- ✅ **Firebase Storage**: Image upload with public URLs
+DispatchAgent
 
-### 🗺️ **Map Visualization**
-- ✅ **Leaflet.js Integration**: Interactive map with custom markers
-- ✅ **Color-coded Severity**: Green (low), Yellow (medium), Red (high)
-- ✅ **Emoji Markers**: Fire 🔥, Smoke 💨, Crowd 👥, Suspicious 👁️
-- ✅ **Rich Popups**: Detailed alert information with snapshots
+Crowd Thermographer Agent
 
-### 💬 **AI Chatbot**
-- ✅ **Natural Language Queries**: "Any anomalies in Zone A?"
-- ✅ **Time-based Analysis**: "Summarize last hour alerts"
-- ✅ **Zone-specific Reports**: Location-based anomaly analysis
-- ✅ **Intelligent Responses**: Context-aware AI assistant
+Panic Diffusion Simulator
 
-### 📧 **Email Notifications**
-- ✅ **Resend API Integration**: Professional HTML email alerts
-- ✅ **Rich Email Templates**: Severity colors, emojis, and styling
-- ✅ **Snapshot Links**: Direct links to captured images
-- ✅ **Contextual Information**: Full alert details in email
+Biometric Stress Agent
 
----
+Sentiment & Audio Monitor Agent
 
-## 🚀 **Features**
+🚀 Features
+🎥 Real-Time Crowd Monitoring
+Live video ingestion via Vertex AI Vision
 
-- **Real-time Video Processing**: Connects to IP webcam streams and processes frames every 5 seconds
-- **AI-Powered Anomaly Detection**: Uses Gemini Vision API to detect fire, smoke, crowd panic, and suspicious activities
-- **Interactive Map Dashboard**: Real-time visualization of alerts with location markers
-- **Intelligent Chatbot**: Query system status and anomalies using natural language
-- **Email Notifications**: Automatic alerts sent to security teams
-- **Modern Dark UI**: Responsive design with dark blue theme
-- **Real-time Updates**: Live data synchronization using Firebase
+Occupancy analytics, active zones, and line-crossing counters
 
-## 🛠️ **Tech Stack**
+Pose estimation and agitation detection via Crowd Thermographer Agent
 
-### Backend
-- **Python + OpenCV**: Video capture and processing
-- **Gemini Vision API**: AI-powered anomaly detection (Free Tier)
-- **Firebase Admin SDK**: Data storage and file uploads
-- **Resend API**: Email notifications
+📈 Predictive Crowd Flow & Panic Simulation
+Forecast zone-based density using TiDE model
 
-### Frontend
-- **Next.js 15**: React framework with App Router
-- **TypeScript**: Type-safe development
-- **Tailwind CSS**: Utility-first styling
-- **shadcn/ui**: Modern UI components
-- **Leaflet.js**: Interactive maps
-- **Firebase Web SDK**: Real-time data synchronization
+Simulate panic propagation with PDE-based Panic Diffusion Simulator
 
-## 📋 **Prerequisites**
+Get zone-level risk scores for preemptive control
 
-1. **IP Webcam App**: Install on Android device
-2. **Firebase Project**: Set up Firestore and Storage
-3. **Gemini API Key**: Get from Google AI Studio (Free)
-4. **Resend Account**: For email notifications (optional)
+🧬 Health & Stress Detection
+Analyze wearable sensor data (HRV, ECG)
 
-## 🔧 **Installation**
+Trigger medical dispatches for overdose/stress incidents
 
-### 1. Clone and Install Dependencies
+Logs anonymized biometric alerts for real-time dashboards
 
-\`\`\`bash
-# Install Node.js dependencies
+📢 Multi-Source Situational Awareness
+Social media and audio monitoring with Gemini/NLP
+
+Geo-sentiment mapping & panic heatmaps
+
+Unified multimodal briefings with natural language querying
+
+🧭 Intelligent Routing & Emergency Dispatch
+Locate incidents and compute optimal responder paths
+
+Route via Google Maps Directions & Places API
+
+Automated alerting with live traffic-aware routes
+
+🕶️ Immersive AR/VR Guidance System 🔥
+NEW FEATURE
+
+AR overlays in mobile/web apps to guide attendees to the safest nearby exit routes
+
+Dynamic rerouting based on real-time crowd density and hazard zones
+
+Future integration with wearable AR devices or phone-based live guidance
+
+Enhanced accessibility and calm decision-making during emergencies
+
+🧠 AI-Powered Briefing & Command Tools
+Gemini LLM agents summarize all incoming signals
+
+Voice or text queries like "Where’s the riskiest crowd surge?"
+
+Access up-to-date crowd data, risks, and system recommendations
+
+🧩 Additional Capabilities
+Lost & Found visual search agent using face matching (privacy-compliant)
+
+Drone recon agent for aerial scanning of reported hazard zones
+
+Automated facial blurring for ethical video handling
+
+🛠️ Tech Stack
+Layer	Technology
+Frontend	Next.js, Firebase Hosting, WebXR / AR.js for AR interface
+Backend	Firebase Functions, Cloud Run, Node.js
+AI/ML	Vertex AI Vision, Forecasting (TiDE), Gemini (LLMs), AutoML, TensorFlow
+Agents	Google Agent Development Kit (ADK), Firestore, BigQuery, Pub/Sub
+Routing	Google Maps API (Routes, Places, Geocoding)
+Deployment	Docker, Firebase Hosting, Cloud Run
+
+📊 Data Flow Summary
+plaintext
+Copy
+Edit
+Cameras → Vertex AI Vision → Crowd Density & Agitation → BigQuery
+Wearables → Vertex AI Classifiers → Stress Events → Firestore
+Social/Audio Feeds → Gemini/NLP → Sentiment Scores → Dashboard
+All data → Gemini Summarizer Agent → Situational Report
+Alerts → Dispatch Agent → Maps API → Responders Routed
+AR Module → Maps Data + Risk Zones → AR Path Overlays
+💻 MVP Setup Instructions
+bash
+Copy
+Edit
+# Clone the repository
+git clone https://github.com/yourusername/project-drishti.git
+cd project-drishti
+
+# Frontend setup
+cd frontend
 npm install
-
-# Install Python dependencies
-pip install -r requirements.txt
-\`\`\`
-
-### 2. Environment Setup
-
-Copy `.env.local` and fill in your credentials:
-
-\`\`\`bash
-# Firebase Web Config (from Firebase Console)
-NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
-
-# Firebase Admin (Service Account)
-FIREBASE_PRIVATE_KEY_ID=your_private_key_id
-FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
-FIREBASE_CLIENT_EMAIL=your_service_account@your_project.iam.gserviceaccount.com
-FIREBASE_CLIENT_ID=your_client_id
-FIREBASE_PROJECT_ID=your_project_id
-
-# Gemini API (Free Tier)
-GEMINI_API_KEY=your_gemini_api_key
-
-# IP Webcam
-CAMERA_STREAM_URL=http://<>/video
-
-# Email (Optional)
-RESEND_API_KEY=your_resend_api_key
-ALERT_EMAIL_TO=security@example.com
-ALERT_EMAIL_FROM=alerts@drishti.ai
-
-# Default Map Location
-NEXT_PUBLIC_DEFAULT_LAT=28.6139
-NEXT_PUBLIC_DEFAULT_LNG=77.2090
-\`\`\`
-
-### 3. Firebase Setup
-
-1. Create a new Firebase project
-2. Enable Firestore Database
-3. Enable Firebase Storage
-4. Create a service account and download the JSON key
-5. Extract the required fields for environment variables
-
-### 4. IP Webcam Setup
-
-1. Install "IP Webcam" app on Android
-2. Start the server in the app
-3. Note the IP address (e.g., http://)
-4. Update `CAMERA_STREAM_URL` in your environment
-
-## 🚀 **Running the Application**
-
-### Start the Frontend Dashboard
-
-\`\`\`bash
 npm run dev
-\`\`\`
+Make sure to configure .env with Firebase, Vertex AI, and Maps API keys. For AR, WebXR-compatible devices are recommended.
 
-Visit `http://localhost:3000` to see the dashboard.
+🏆 Built For
+Google Cloud ADK Hackathon
 
-### Start the Video Processing Backend
+Real-world disaster preparedness
 
-\`\`\`bash
-# Make sure your IP webcam is running
-python scripts/video_processor.py
-\`\`\`
+Proactive AI-powered event safety
 
-## 📱 **Usage**
+Crowd-sourced emergency support systems
 
-### Dashboard Features
+📷 Screenshots / Preview
+Dashboard Overview	Vision Heatmaps	AR Evacuation View
 
-1. **Live Map**: View real-time anomaly locations with color-coded severity markers
-2. **Alerts List**: Browse recent alerts with filtering options
-3. **Stats Cards**: Monitor system status and alert counts
-4. **Filter Controls**: Filter alerts by severity, type, status, and time range
+🤝 Contributors
+Team Drishti
 
-### AI Chatbot Queries
+💻 Developer A – Frontend, AR UI, Gemini agent
 
-Ask the chatbot questions like:
-- "Are there any anomalies in Zone A?"
-- "What happened in the last hour?"
-- "Show me high-severity alerts"
-- "Any fire incidents today?"
-- "System status overview"
+📊 Developer B – Backend, forecasting pipeline, dispatch system
 
-### Alert Management
+📚 Resources
+Vertex AI Forecasting
 
-- Click "View Image" to see the captured frame
-- Click "Resolve" to mark alerts as resolved
-- Use filters to focus on specific alert types
+Vertex AI Vision
 
-## 🔍 **Anomaly Types Detected**
+Vertex Agent Builder
 
-- **🔥 Fire**: Flames and fire incidents
-- **💨 Smoke**: Smoke detection
-- **👥 Crowd Panic**: Unusual crowd behavior
-- **👁️ Suspicious Activity**: Potentially dangerous activities
-- **⚡ Violence**: Physical altercations
+Maps API Routing
 
-## 📊 **System Architecture**
+WebXR for AR
 
-\`\`\`
-IP Webcam → Python Backend → Gemini Vision API → Firebase Storage/Firestore
-                                                        ↓
-Next.js Dashboard ← Real-time Updates ← Firebase Web SDK
-\`\`\`
+ADK GitHub
 
-## 🛡️ **Security Features**
-
-- Real-time monitoring with 5-second intervals
-- Confidence scoring for each detection
-- Severity classification (Low/Medium/High)
-- Automatic email notifications
-- Historical data tracking
-- Resolution workflow
-
-## 🎨 **UI Features**
-
-- **Dark Blue Theme**: Modern, professional appearance
-- **Responsive Design**: Works on desktop and mobile
-- **Real-time Updates**: Live data without page refresh
-- **Interactive Maps**: Click markers for detailed information
-- **Filtering System**: Advanced search and filter capabilities
-
-## 📈 **Performance**
-
-- **Processing Speed**: 1 frame every 5 seconds
-- **Response Time**: Near real-time alert generation
-- **Scalability**: Supports multiple camera feeds
-- **Storage**: Efficient image compression and storage
-
-## 🔧 **Customization**
-
-### Adding New Anomaly Types
-
-1. Update the Gemini prompt in `video_processor.py`
-2. Add new types to the filter controls
-3. Update the chatbot analysis logic
-
-### Changing Detection Frequency
-
-Modify the `time.sleep(5)` value in `video_processor.py`
-
-### Custom Map Styling
-
-Update the Leaflet configuration in `map-view.tsx`
-
-## 🐛 **Troubleshooting**
-
-### Common Issues
-
-1. **Camera Connection Failed**: Check IP webcam app is running and IP is correct
-2. **Firebase Errors**: Verify all environment variables are set correctly
-3. **Gemini API Errors**: Check API key and quota limits
-4. **Map Not Loading**: Ensure Leaflet CSS is loaded correctly
-
-### Debug Mode
-
-Add console logs in the Python script to monitor processing:
-
-\`\`\`python
-print(f"Frame captured: {ret}")
-print(f"Gemini response: {response.text}")
-\`\`\`
-
-## 📄 **License**
-
-This project is licensed under the MIT License.
-
-## 🤝 **Contributing**
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 📞 **Support**
-
-For issues and questions:
-1. Check the troubleshooting section
-2. Review Firebase and Gemini API documentation
-3. Open an issue on GitHub
-
----
-
-**Project Drishti** - Empowering security through intelligent video analysis 🔍👁️
-
-*Built with ❤️ using Next.js 15, TypeScript, Tailwind CSS, Firebase, and Gemini AI*
-
+📄 License
+MIT License. See LICENSE for full terms.
