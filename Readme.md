@@ -2,7 +2,6 @@
 
 **Drishti** is a multi-agent AI system designed to improve safety at large public events. Powered by **Google Cloud**, **Vertex AI**, and the **Agent Development Kit (ADK)**, Drishti integrates real-time video analytics, forecasting, LLM summarization, and automated dispatch to shift crowd management from reactive to **proactive**.
 
-> 🏆 Finalist at Agentic AI Day  
 > 🧠 Built with Vertex AI, Gemini, Google Maps, ADK  
 > 🌍 Designed for events like **Maha Kumbh 2025** to prevent stampedes and chaos in real-time
 
