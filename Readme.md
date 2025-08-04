@@ -1,154 +1,118 @@
-🛡️ Project Drishti – Agentic AI for Event Safety
-A real-time, multi-agent AI platform using Google Cloud, AR/VR, and LLMs to proactively manage crowd safety in large-scale events through visual analytics, forecasting, anomaly detection, and intelligent dispatch.
+# 👁️‍🗨️ Project Drishti – AI-Powered Public Event Safety Platform
 
-📽️ Overview
-Project Drishti is a cutting-edge event safety solution powered by multi-agent AI, designed to monitor and manage crowd movement, prevent disasters, and ensure rapid response. The system ingests live video, biometric, and social data, analyzes it using Google Cloud's Vertex AI ecosystem, and responds intelligently with dispatch, alerts, and even AR-guided evacuation routes.
+**Drishti** is a multi-agent AI system designed to improve safety at large public events. Powered by **Google Cloud**, **Vertex AI**, and the **Agent Development Kit (ADK)**, Drishti integrates real-time video analytics, forecasting, LLM summarization, and automated dispatch to shift crowd management from reactive to **proactive**.
 
-🧠 System Architecture
-Drishti’s modular architecture includes a set of autonomous agents communicating through Firestore, Pub/Sub, and BigQuery. These agents perform real-time analytics, forecasting, multimodal anomaly detection, and incident response.
+> 🏆 Finalist at Agentic AI Day  
+> 🧠 Built with Vertex AI, Gemini, Google Maps, ADK  
+> 🌍 Designed for events like **Maha Kumbh 2025** to prevent stampedes and chaos in real-time
 
-Key Agents:
-CrowdMonitor Agent
+---
 
-ForecastAgent
+## 📌 Problem Statement
 
-Gemini Summarizer Agent
+**Theme**: Improving Safety at Large Public Events  
+**Category**: Software Solution  
+**Team Name**: Atoms  
+**Team Leader**: Mohammad Ehshan  
 
-DispatchAgent
+Large events often lack coordinated, real-time tools for predicting and mitigating crowd-related disasters. Project Drishti uses an intelligent multi-agent approach to solve this.
 
-Crowd Thermographer Agent
+---
 
-Panic Diffusion Simulator
+## 💡 What is Drishti?
 
-Biometric Stress Agent
+A fully integrated **agentic platform** that:
 
-Sentiment & Audio Monitor Agent
+- **Analyzes live video** for crowd size, flow, and anomalies  
+- **Forecasts surges** to prevent stampedes or bottlenecks  
+- **Summarizes insights** using a Gemini-powered LLM  
+- **Automates dispatch** using Maps APIs for faster incident response  
+- **Provides real-time AR/VR navigation and Voice AI communication**
 
-🚀 Features
-🎥 Real-Time Crowd Monitoring
-Live video ingestion via Vertex AI Vision
+---
 
-Occupancy analytics, active zones, and line-crossing counters
+## 🧠 System Architecture
 
-Pose estimation and agitation detection via Crowd Thermographer Agent
+![Architecture Diagram](https://claude.ai/public/artifacts/d6710b24-5d3c-4d04-8f96-a431b95e7ccc)
 
-📈 Predictive Crowd Flow & Panic Simulation
-Forecast zone-based density using TiDE model
+---
 
-Simulate panic propagation with PDE-based Panic Diffusion Simulator
+## 🧩 Core Components
 
-Get zone-level risk scores for preemptive control
+### 🎥 1. CrowdMonitor Agent
+- Uses **Vertex AI Vision** to count people per zone from drones/CCTV.
+- Detects congestion, falls, and other unsafe behavior.
+- Outputs structured time-series data to BigQuery.
 
-🧬 Health & Stress Detection
-Analyze wearable sensor data (HRV, ECG)
+### 📈 2. Forecast Agent
+- Feeds real-time counts into **Vertex AI Forecasting (AutoML/TiDE)**.
+- Predicts crowd surges 10–20 minutes ahead.
+- Sends early warnings like: “Zone B may exceed capacity in 15 min.”
 
-Trigger medical dispatches for overdose/stress incidents
+### 🧾 3. Gemini LLM Summarizer Agent
+- Fuses data from video feeds, social media, incident logs.
+- Summarizes into briefings.
+- Responds to voice or text queries: “What’s the issue in Zone C?”
 
-Logs anonymized biometric alerts for real-time dashboards
+### 🛰️ 4. AI Dispatch Agent
+- On incident detection, routes first responders using **Google Maps API**.
+- Calculates fastest, congestion-free route with turn-by-turn directions.
 
-📢 Multi-Source Situational Awareness
-Social media and audio monitoring with Gemini/NLP
+---
 
-Geo-sentiment mapping & panic heatmaps
+## 🧬 Additional Smart Features
 
-Unified multimodal briefings with natural language querying
+- **Voice Agent**: Gemini-powered bi-directional voice interface for commanders.
+- **AR/VR Navigation**: Color-coded safe zone overlays, exit guidance.
+- **Social Media Sentiment Agent**: Detects fear/panic from geo-tagged posts using NLP.
+- **Heatmap Thermographer**: Detects agitation and crowd panic patterns.
+- **Modular Extensions**: Add Lost & Found facial recognition, sentiment analyzers, etc.
 
-🧭 Intelligent Routing & Emergency Dispatch
-Locate incidents and compute optimal responder paths
+---
 
-Route via Google Maps Directions & Places API
+## 🎯 Unique Selling Points (USP)
 
-Automated alerting with live traffic-aware routes
+✅ End-to-end **multi-agent architecture** (unlike siloed solutions)  
+✅ Built entirely on **Google’s Agent Development Kit (ADK)**  
+✅ Combines **real-time analytics + forecasting + dispatch + LLM summaries**  
+✅ Enables **anticipatory intervention**, not just reactive action  
+✅ Modular, **scalable**, and **customizable**
 
-🕶️ Immersive AR/VR Guidance System 🔥
-NEW FEATURE
+---
 
-AR overlays in mobile/web apps to guide attendees to the safest nearby exit routes
+## 🌐 Technologies Used
 
-Dynamic rerouting based on real-time crowd density and hazard zones
+| Category         | Tools / Services                                |
+|------------------|--------------------------------------------------|
+| AI & ML          | Vertex AI Vision, Vertex AI Forecast, Gemini LLM |
+| Agent Framework  | Vertex AI Agent Builder / Google ADK             |
+| Backend Infra    | Google Cloud Run, Node.js, Python, Firebase      |
+| Data Storage     | BigQuery, Firestore, Pub/Sub                     |
+| Maps & Routing   | Google Maps Places API, Routes API               |
+| Frontend         | Next.js, Firebase Hosting, WebXR (AR/VR)         |
+| Authentication   | Firebase Auth                                    |
 
-Future integration with wearable AR devices or phone-based live guidance
+---
 
-Enhanced accessibility and calm decision-making during emergencies
+## 🧪 Demo & Media
 
-🧠 AI-Powered Briefing & Command Tools
-Gemini LLM agents summarize all incoming signals
+🎥 [Demo Video (Google Drive)](https://drive.google.com/file/d/15Wq1S3MCKRCN6WZuiKa7jbOm_edKmDqW/view?usp=sharing)  
+🔗 [Live Architecture Diagram](https://claude.ai/public/artifacts/d6710b24-5d3c-4d04-8f96-a431b95e7ccc)  
+📦 [Source Code on GitHub](https://github.com/Mohammad-Ehshan/Drishti)
 
-Voice or text queries like "Where’s the riskiest crowd surge?"
+---
 
-Access up-to-date crowd data, risks, and system recommendations
+## 🛠️ Setup Instructions (Coming Soon)
 
-🧩 Additional Capabilities
-Lost & Found visual search agent using face matching (privacy-compliant)
+A detailed setup guide will be added soon for replicating the ADK pipeline, training the AI models, and deploying the platform on Google Cloud.
 
-Drone recon agent for aerial scanning of reported hazard zones
 
-Automated facial blurring for ethical video handling
+---
 
-🛠️ Tech Stack
-Layer	Technology
-Frontend	Next.js, Firebase Hosting, WebXR / AR.js for AR interface
-Backend	Firebase Functions, Cloud Run, Node.js
-AI/ML	Vertex AI Vision, Forecasting (TiDE), Gemini (LLMs), AutoML, TensorFlow
-Agents	Google Agent Development Kit (ADK), Firestore, BigQuery, Pub/Sub
-Routing	Google Maps API (Routes, Places, Geocoding)
-Deployment	Docker, Firebase Hosting, Cloud Run
+## 📄 License
 
-📊 Data Flow Summary
-plaintext
-Copy
-Edit
-Cameras → Vertex AI Vision → Crowd Density & Agitation → BigQuery
-Wearables → Vertex AI Classifiers → Stress Events → Firestore
-Social/Audio Feeds → Gemini/NLP → Sentiment Scores → Dashboard
-All data → Gemini Summarizer Agent → Situational Report
-Alerts → Dispatch Agent → Maps API → Responders Routed
-AR Module → Maps Data + Risk Zones → AR Path Overlays
-💻 MVP Setup Instructions
-bash
-Copy
-Edit
-# Clone the repository
-git clone https://github.com/yourusername/project-drishti.git
-cd project-drishti
+MIT License – Open to contributions, use, and innovation with credits.
 
-# Frontend setup
-cd frontend
-npm install
-npm run dev
-Make sure to configure .env with Firebase, Vertex AI, and Maps API keys. For AR, WebXR-compatible devices are recommended.
+---
 
-🏆 Built For
-Google Cloud ADK Hackathon
-
-Real-world disaster preparedness
-
-Proactive AI-powered event safety
-
-Crowd-sourced emergency support systems
-
-📷 Screenshots / Preview
-Dashboard Overview	Vision Heatmaps	AR Evacuation View
-
-🤝 Contributors
-Team Drishti
-
-💻 Developer A – Frontend, AR UI, Gemini agent
-
-📊 Developer B – Backend, forecasting pipeline, dispatch system
-
-📚 Resources
-Vertex AI Forecasting
-
-Vertex AI Vision
-
-Vertex Agent Builder
-
-Maps API Routing
-
-WebXR for AR
-
-ADK GitHub
-
-📄 License
-MIT License. See LICENSE for full terms.
+> **Drishti means "vision" — and our AI vision is to make every large gathering safer, smarter, and more manageable.**
